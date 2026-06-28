@@ -1,6 +1,6 @@
 import { Controller } from '@nestjs/common';
 import { EventPattern, Payload } from '@nestjs/microservices';
-import type { OrderCreatedEvent } from '../../../libs/shared/src/events/order-created.event';
+import type { OrderCreatedEvent } from '@app/shared';
 
 @Controller()
 export class OrderEventsController {
