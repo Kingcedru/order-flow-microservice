@@ -3,7 +3,7 @@ import { OrdersService } from './orders.service';
 import { OrderCreatedEvent } from '@app/shared';
 import { ClientProxy } from '@nestjs/microservices';
 
-@Controller()
+@Controller('orders')
 export class OrdersController {
   constructor(
     @Inject('ORDERS_SERVICE') private readonly client: ClientProxy,
