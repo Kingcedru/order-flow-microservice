@@ -11,6 +11,7 @@ import { OrdersService } from './orders.service';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRootAsync({
+      imports: [ConfigModule],
       useFactory: (config: ConfigService) => ({
         type: 'postgres',
         url: config.get('DATABASE_URL'),
@@ -23,6 +24,7 @@ import { OrdersService } from './orders.service';
     ClientsModule.registerAsync([
       {
         name: 'ORDERS_SERVICE',
+        imports: [ConfigModule],
         useFactory: (config: ConfigService) => ({
           transport: Transport.RMQ,
           options: {
